@@ -1,7 +1,6 @@
 package jianzhioffer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by darcy
@@ -23,44 +22,43 @@ public class P26_CopyOfComplicatedList {
         }
     }
 
+    /**
+     * 思路: 每次都copy一个节点的时候，都把原list到copyList上对应的节点放入到map中;
+     * 那么这样定位节点
+     * @param pHead
+     * @return
+     */
     public RandomListNode Clone(RandomListNode pHead){
 
         if (pHead == null) {
             return null;
         }
 
-        /*RandomListNode cloneHead = new RandomListNode(-1);
-        RandomListNode iterPtr = cloneHead;
-        while (pHead != null) {
-            iterPtr.next = new RandomListNode(pHead.label);
-            pHead = pHead.next;
-            iterPtr = iterPtr.next;
-        }*/
 
+        Map<RandomListNode, RandomListNode> map = new HashMap<>();
+        RandomListNode cloneHead = new RandomListNode(-1); // never changed copy list head;
+        RandomListNode cloneHead2 = cloneHead; // for modify random pointer;
+        RandomListNode iterPtr = cloneHead; // for copy of list;
 
-
-        List<RandomListNode> listNodes = new ArrayList<>();
-//        Map<Integer, RandomListNode> map = new HashMap<>();
-
-        RandomListNode cloneHead = new RandomListNode(-1);
-        RandomListNode iterPtr = cloneHead;
-        int i = 0;
-        RandomListNode head = pHead;
+        RandomListNode head = pHead; // 维持一个原链表的head;
         while (pHead != null) {
             RandomListNode temp = new RandomListNode(pHead.label);
             iterPtr.next = temp;
-            listNodes.add(temp);
+            map.put(pHead, temp);
             pHead = pHead.next;
             iterPtr = iterPtr.next;
         }
 
+        // 维持了原链表节点到copy list节点的映射;
         while (head != null) {
-            if (head.random != null) {
-                RandomListNode temp = head.random;
+            if (cloneHead2.next != null) {
+                cloneHead2.next.random = map.get(head.random);
             }
+            head = head.next;
+            cloneHead2 = cloneHead2.next;
         }
 
-        return null;
+        return cloneHead.next;
 
     }
 
