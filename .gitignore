@@ -24,8 +24,8 @@
 hs_err_pid*
 
 # self add
-*.iml
-.idea/
+# *.iml
+# .idea/
 
 # may to useful to eclipse
 .classpath/
