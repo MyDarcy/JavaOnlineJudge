@@ -25,10 +25,11 @@ public class P26_CopyOfComplicatedList {
     /**
      * 思路: 每次都copy一个节点的时候，都把原list到copyList上对应的节点放入到map中;
      * 那么这样定位节点
+     *
      * @param pHead
      * @return
      */
-    public RandomListNode Clone(RandomListNode pHead){
+    public RandomListNode Clone(RandomListNode pHead) {
 
         if (pHead == null) {
             return null;
@@ -60,6 +61,76 @@ public class P26_CopyOfComplicatedList {
 
         return cloneHead.next;
 
+    }
+
+
+    /**
+     * 思路: 将新建的节点插入到原节点的后面，那么在遍历一遍的list后修改新节点的random 引用 -- 等于原节点的
+     * random指向的节点的下一个节点; 针对修改后的链表，奇数节点连接起来就是原list, 偶数节点连起来就是新的list;
+     * @param pHead
+     * @return
+     */
+    public RandomListNode Clone2(RandomListNode pHead) {
+        cloneNodes(pHead);
+        cloneRandom(pHead);
+        return copyList(pHead);
+    }
+
+
+    private void cloneNodes(RandomListNode pHead) {
+        RandomListNode iter = pHead;
+        while (iter != null) {
+            RandomListNode temp = new RandomListNode(iter.label);
+            temp.next = iter.next;
+            iter.next = temp;
+            iter = temp.next;
+        }
+    }
+
+    /**
+     * 修复新节点的random指向; 是原节点的random指向的节点指向的下一个节点;
+     * @param pHead
+     */
+    private void cloneRandom(RandomListNode pHead) {
+        RandomListNode iter = pHead;
+        while (iter != null) {
+            RandomListNode temp = iter.next;
+            if (iter.random != null) {
+                temp.random = iter.random.next;
+            }
+            iter = temp.next;
+        }
+    }
+
+    /**
+     * 提取偶数号节点就是copy list;
+     * @param pHead
+     * @return
+     */
+
+    private RandomListNode copyList(RandomListNode pHead) {
+        RandomListNode iter = pHead;
+        RandomListNode cloneHead = null;
+        RandomListNode cloneNode = null;
+
+        /**
+         * 维持两个指针;一个仅仅用于维持头;
+         */
+        if (iter != null) {
+            cloneHead = iter.next;
+            cloneNode = iter.next;
+            // 维持iter链表;
+            iter.next = cloneNode.next;
+            iter = cloneNode.next;
+        }
+
+        while (iter != null) {
+            cloneNode.next = iter.next;
+            cloneNode = cloneNode.next;
+            iter.next = cloneNode.next;
+            iter = iter.next;
+        }
+        return cloneHead;
     }
 
 }
