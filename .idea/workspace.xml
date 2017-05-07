@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="444222bd-93b2-42c3-a779-25d3d237ad4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P30_PartialContinuousArrayMaxSum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P32_OneOccurenceTimes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P33_NArrayMakeLeastNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P34_UgleNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P35_FirstOneTimesInString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P35_Homeworks.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P35_RemoveCharInSecondString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P36_ReversedPair.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jianzhioffer/P37_FirstSameNodeInTwoList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/nowcoder/didi/IslandNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/nowcoder/didi/MostSimilarVacabulary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jianzhioffer/P29_LeastKNumbers.java" afterPath="$PROJECT_DIR$/src/jianzhioffer/P29_LeastKNumbers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jianzhioffer/Px_Problem.java" afterPath="$PROJECT_DIR$/src/jianzhioffer/Px_Problem.java" />
-    </list>
+    <list default="true" id="444222bd-93b2-42c3-a779-25d3d237ad4e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -322,28 +305,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="jianzhioffer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningJava" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LearningJava" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jianzhioffer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="P2_StaticBlock.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -880,12 +841,12 @@
       <workItem from="1494051555887" duration="10584000" />
       <workItem from="1494071770852" duration="6941000" />
       <workItem from="1494124277767" duration="30747000" />
-      <workItem from="1494170239687" duration="4830000" />
+      <workItem from="1494170239687" duration="5186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86476000" />
+    <option name="totallyTimeSpent" value="86832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -901,7 +862,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25081968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25081968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2262295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
