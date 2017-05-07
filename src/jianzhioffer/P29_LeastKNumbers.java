@@ -75,9 +75,11 @@ public class P29_LeastKNumbers {
         int pivotkey = input[k - 1];
         swap(input, k - 1, start);
         while (start < end) {
+            // 从后面找一个小于pivotKey的元素;
             while (start < end && input[end] >= pivotkey)
                 end--;
             swap(input, start, end);
+            // 从前面找一个大于pivotKey的元素;
             while (start < end && input[start] <= pivotkey)
                 start++;
             swap(input, start, end);
