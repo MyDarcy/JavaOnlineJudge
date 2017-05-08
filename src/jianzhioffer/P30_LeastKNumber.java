@@ -10,7 +10,7 @@ import java.util.function.Consumer;
  * 2017/5/6--17:16
  * Description:
  */
-public class P29_LeastKNumber {
+public class P30_LeastKNumber {
     /**
      * treeset 红黑树特性来做...
      * @param input

@@ -5,7 +5,7 @@ package jianzhioffer;
  * 2017/5/6--17:51
  * Description:
  */
-public class P30_PartialContinuousArrayMaxSum {
+public class P31_PartialContinuousArrayMaxSum {
 
     /*
         遍历到一个元素的时候，如果此前的最大连续子数组和小于0，那么最大连续子数组和重新计数(设置为当前值);
