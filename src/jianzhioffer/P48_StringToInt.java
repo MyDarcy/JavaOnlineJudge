@@ -1,5 +1,8 @@
 package jianzhioffer;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by darcy
  * 2017/5/15--0:56
@@ -16,9 +19,69 @@ package jianzhioffer;
  */
 public class P48_StringToInt {
 
+    /**
+     * 注意显示的正负号表示
+     * @param str
+     * @return
+     */
     public int StrToInt(String str) {
 
-        return 0;
+        if (str == null || str.length() == 0) {
+            return 0;
+        }
+
+        if (str.length() == 1 && (str.charAt(0) == '+' || str.charAt(0) == '-')) {
+            return 0;
+        }
+
+        /*Pattern compile = Pattern.compile("\\d+");
+        Matcher matcher = compile.matcher(str);
+        boolean b = matcher.find();
+        if (!b) {
+            System.out.println("non digit.");
+            return 0;
+        }*/
+
+        boolean matches = str.matches("[\\+\\-]?\\d+");
+        if (!matches) {
+//            System.out.println("non digit.");
+            return 0;
+        }
+
+        int result = 0;
+        if (str.charAt(0) == '+' || str.charAt(0) == '-') {
+            result = parseInt(str.substring(1));
+            if (str.charAt(0) == '+') {
+                return result;
+            } else {
+                return -result;
+            }
+        }
+
+        result = parseInt(str);
+
+
+
+
+        System.out.println(result);
+
+
+        return result;
+    }
+
+    private int parseInt(String str) {
+        int result = str.charAt(0) - '0';
+        for (int i = 1; i < str.length(); i++) {
+            result *= 10;
+            result += str.charAt(i) - '0';
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        P48_StringToInt demo = new P48_StringToInt();
+        System.out.println(demo.StrToInt("+12"));;
     }
 
 }
