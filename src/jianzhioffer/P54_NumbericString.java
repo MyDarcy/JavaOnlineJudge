@@ -14,6 +14,7 @@ public class P54_NumbericString {
 
     /**
      * 正则表达式匹配;
+     *
      * @param str
      * @return
      */
@@ -51,9 +52,19 @@ public class P54_NumbericString {
         return false;
     }
 
+
+    /**
+     * 链接：https://www.nowcoder.com/questionTerminal/6f8c901d091949a5837e24bb82a731f2
+     * 这个是有问题的: +.
+     */
+    public boolean isNumeric2(char[] str) {
+        String string = String.valueOf(str);
+        return string.matches("[\\+-]?[0-9]*(\\.[0-9]*)?([eE][\\+-]?[0-9]+)?");
+    }
+
     public static void main(String[] args) {
         P54_NumbericString demo = new P54_NumbericString();
-        System.out.println(demo.isNumeric("100".toCharArray()));
+        System.out.println(demo.isNumeric2("-100".toCharArray()));
     }
 
 
