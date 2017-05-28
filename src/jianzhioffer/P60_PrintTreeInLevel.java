@@ -63,6 +63,49 @@ public class P60_PrintTreeInLevel {
 
     }
 
+
+    /**
+     * 维护两个变量分别记录当前层次还要打印的数目，一个记录下一层次的节点的数目。
+     * @param pRoot
+     * @return
+     */
+    ArrayList<ArrayList<Integer>> Print3(TreeNode pRoot) {
+        if (pRoot == null) {
+            return new ArrayList<>();
+        }
+
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
+        Deque<TreeNode> queue1 = new LinkedList<>();
+        queue1.addLast(pRoot);
+        int toBePrinted = 1;
+        int nextLevelNumber = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (!queue1.isEmpty()) {
+            TreeNode node = queue1.removeFirst();
+            list.add(node.val);
+            if (node.left != null) {
+                queue1.addLast(node.left);
+                nextLevelNumber++;
+            }
+
+            if (node.right != null) {
+                queue1.addLast(node.right);
+                nextLevelNumber++;
+            }
+            toBePrinted--;
+            if (toBePrinted == 0) {
+                toBePrinted = nextLevelNumber;
+                nextLevelNumber = 0;
+                result.add(list);
+                list = new ArrayList<>();
+            }
+        }
+
+        return result;
+    }
+
     /**
      * 这种方式报 java.util.ConcurrentModificationException
      * @param pRoot
