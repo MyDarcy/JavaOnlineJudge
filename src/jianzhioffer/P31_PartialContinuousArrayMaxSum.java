@@ -4,6 +4,7 @@ package jianzhioffer;
  * Created by darcy
  * 2017/5/6--17:51
  * Description:
+ * 连续子数组的最大和。
  */
 public class P31_PartialContinuousArrayMaxSum {
 

@@ -7,6 +7,7 @@ import java.util.Set;
  * Created by darcy
  * 2017/5/7--23:58
  * Description:
+ * 输入两个链表，找出它们的第一个公共结点。
  */
 public class P37_FirstSameNodeInTwoList {
     public class ListNode {

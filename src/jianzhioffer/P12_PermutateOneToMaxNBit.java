@@ -4,6 +4,7 @@ package jianzhioffer;
  * Created by darcy
  * 2017/4/8--23:32
  * Description:
+ * 1到最大的N位数。
  */
 public class P12_PermutateOneToMaxNBit {
     private static int count;

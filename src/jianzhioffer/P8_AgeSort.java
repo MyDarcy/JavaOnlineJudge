@@ -6,6 +6,7 @@ import java.util.Random;
  * Created by darcy
  * 2017/4/4--0:06
  * Description:
+ * 大量0~200以内的数排序。
  */
 public class P8_AgeSort {
 

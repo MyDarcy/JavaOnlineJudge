@@ -4,6 +4,8 @@ package jianzhioffer;
  * Created by darcy
  * 2017/4/4--0:45
  * Description:
+ *
+ * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
  */
 public class P10_BitToCountOne {
     public static void main(String[] args) {

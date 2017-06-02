@@ -4,6 +4,7 @@ package jianzhioffer;
  * Created by darcy
  * 2017/5/11--0:07
  * Description:
+ * 输入一棵二叉树，判断该二叉树是否是平衡二叉树。
  */
 public class P39_IsBalanceTree {
 

@@ -8,19 +8,19 @@ import java.util.LinkedList;
  * Created by darcy
  * 2017/3/26--0:31
  * Description:
+ * 输入一个链表，从尾到头打印链表每个节点的值。
  */
 
- class ListNode {
-     int val;
-     ListNode next = null;
-
-     ListNode(int val) {
-         this.val = val;
-     }
- }
-
-
 public class P5_ReversePrintList {
+
+    class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
 
      /*
          放入stack;
