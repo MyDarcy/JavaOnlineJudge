@@ -42,10 +42,26 @@ public class P821_RemoveDuplicateNodeInlist {
 
     /**
      * 不使用额外内存。
+     * 类似两个for循环的遍历，不过这里是用两个指针。
      * @param head
      */
     public void deleteDuplicateNode2(ListNode head) {
+        if (head == null) {
+            return;
+        }
 
+        ListNode current = head;
+        while (current != null) {
+            ListNode iter = current;
+            while (iter.next != null) {
+                if (iter.next.val == current.val) {
+                    iter.next = iter.next.next;
+                } else {
+                    iter = iter.next;
+                }
+            }
+            current = current.next;
+        }
     }
 
 
