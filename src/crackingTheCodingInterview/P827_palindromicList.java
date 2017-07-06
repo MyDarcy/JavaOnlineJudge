@@ -66,13 +66,69 @@ public class P827_palindromicList {
         return true;
     }
 
+
+    class Result {
+        ListNode node;
+        boolean result;
+
+        public Result(ListNode node, boolean result) {
+            this.node = node;
+            this.result = result;
+        }
+    }
     /**
-     * 递归解法
+     * 递归解法 3b代表链表后面值为3的节点
+     * 每次递归调用的参数和返回值
+     * isPalindrome: list=0 1 2 3 4 3 2 1 0 len=9 head->0 主函数调用
+     *   isPalindrome: list=1 2 3 4 3 2 1 0 len=7 head->1
+     *     isPalindrome: list=2 3 4 3 2 1 0 len=5 head->2
+     *       isPalindrome: list=3 4 3 2 1 0 len=3 head->3
+     *         isPalindrome: list=4 3 2 1 0 len=1 head->4 返回;
+     *         return node 3b, true
+     *        return node 2b, true
+     *      return node 1b, true
+     *    return node 0b, true
+     *  return node 0b, true 主函数返回.
      * @param pHead
      * @return
      */
-    public boolean isPalindrome(ListNode pHead) {
-        
+    public boolean isPalindrome2(ListNode pHead) {
+        Result result = isPalindromeRecursive(pHead, listSize(pHead));
+        return result.result;
+    }
+
+    private Result isPalindromeRecursive(ListNode pHead, int length) {
+        if (pHead == null || length == 0) {
+            return new Result(null, true);
+        } else if (length == 1) {
+            return new Result(pHead.next, true);
+        } else if (length == 2) {
+            return new Result(pHead.next.next, pHead.val == pHead.next.val);
+        }
+
+        Result result = isPalindromeRecursive(pHead.next, length - 2);
+        // 为true的话,只能表明目前为止的部分是满足回文的，所以需要继续往下一个节点比较.
+        if (!result.result || result.node == null) {
+            return result;
+        } else {
+            result.result = (pHead.val == result.node.val);
+            result.node = result.node.next;
+            return result;
+        }
+    }
+
+    private int listSize(ListNode pHead) {
+        if (pHead == null) {
+            return 0;
+        }
+
+        ListNode iter = pHead;
+        int count = 0;
+        while (iter != null) {
+            count++;
+            iter = iter.next;
+        }
+        return count;
     }
 
 
