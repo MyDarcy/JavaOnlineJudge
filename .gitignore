@@ -27,6 +27,7 @@ hs_err_pid*
 *.iml
 .idea/
 out/
+target/
 
 # may to useful to eclipse
 .classpath/
