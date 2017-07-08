@@ -12,7 +12,7 @@ package crackingTheCodingInterview;
  * 指向的节点插入到p1所指向节点的后面。
  * p1快指针，p2慢指针。
  */
-public class P82_ListAABBToABAB {
+public class P820_ListAABBToABAB {
 
     private Node head = null;
 
@@ -80,7 +80,7 @@ public class P82_ListAABBToABAB {
     }
 
     public static void main(String[] args) {
-        P82_ListAABBToABAB demo = new P82_ListAABBToABAB();
+        P820_ListAABBToABAB demo = new P820_ListAABBToABAB();
         demo.append("a1");
         demo.append("a2");
         demo.append("a3");

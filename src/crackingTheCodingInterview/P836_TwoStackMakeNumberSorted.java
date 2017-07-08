@@ -1,6 +1,9 @@
 package crackingTheCodingInterview;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Stack;
 
 /**
  * Author by darcy
@@ -21,15 +24,78 @@ import java.util.ArrayList;
 public class P836_TwoStackMakeNumberSorted {
 
 
+    /**
+     * 思路: 传入待排序的栈,将栈顶元素出栈(保存起来),然后和结果栈的栈顶元素比较,将结果栈栈顶大于待排序栈顶元素的先移动到
+     * 待排序的栈,然后将将待排序栈顶元素移动到结果栈,如此. 时间复杂度O(n2), 空间复杂度O(1)
+     *
+     * 如果允许使用的栈数目无限,那么也可以实现quicksort和mergesort.
+     * mergesort: 再创建两个栈,将本栈分成两个部分.然后递归排序两个栈,然后将两个栈归并到一起排好序.放回原来的位置.
+     * 但是这样需要每一层递归都需要创建两个栈.
+     *
+     * quicksort: 创建两个栈,然后根据基准元素pivot将原栈分成两个栈,然后对这两个栈进行递归排序,然后归并在一起.
+     * 放回原来的栈中,同样,每一层递归都需要创建两个栈.
+     *
+     * @param original
+     * @return
+     */
+    public static Stack<Integer> sort(Stack<Integer> original) {
+        Stack<Integer> result = new Stack<>();
+        while (!original.isEmpty()) {
+            Integer value = original.pop();
+            // 这一步非常巧妙,只是将当前结果栈的比原栈顶大的元素移动到原栈,然后把原栈顶元素移动到目的栈,并不急着将
+            // 之前移动到原栈的大元素移动回去.因为下一轮迭代就可以完成这个事,而复杂度也不会改变.
+            while (!result.isEmpty() && result.peek() > value) {
+                original.push(result.pop());
+            }
+            result.push(value);
+        }
+        return result;
+    }
 
     /**
-     *
+     * nowcoder solutions
      * @param numbers
      * @return
      */
     public ArrayList<Integer> twoStacksSort(int[] numbers) {
         // write code here
+        ArrayList<Integer> original = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++) {
+            original.add(numbers[i]);
+        }
+        while (!original.isEmpty()) {
+            Integer integer = original.remove(original.size() - 1);
+            while (!result.isEmpty() && result.get(result.size() - 1) > integer) {
+                original.add(result.remove(result.size() - 1));
+            }
+            result.add(integer);
+        }
+        Collections.reverse(result);
+        return result;
+    }
 
-        return null;
+    public static void main(String[] args) {
+        Stack<Integer> original = new Stack<>();
+        int size = 10;
+        int[] numbers = new int[size];
+        Random random = new Random(31);
+        for (int i = 0; i < size; i++) {
+            int item = random.nextInt(100);
+            System.out.print(item + "\t");
+            original.push(item);
+            numbers[i] = item;
+        }
+        System.out.println();
+        Stack<Integer> result = sort(original);
+        while (!result.isEmpty()) {
+            System.out.print(result.pop() + "\t");
+        }
+        System.out.println();
+        P836_TwoStackMakeNumberSorted demo = new P836_TwoStackMakeNumberSorted();
+        ArrayList<Integer> list = demo.twoStacksSort(numbers);
+        System.out.println(list);
+
+
     }
 }

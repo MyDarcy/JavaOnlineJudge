@@ -9,7 +9,7 @@ package crackingTheCodingInterview;
  * 1. 技巧1-- 快慢指针，快指针先走几步，或者与慢指针相差固定的步数.
  *
  */
-public class P82_Node {
+public class P820_Node {
     class Node {
         int value;
         Node next;

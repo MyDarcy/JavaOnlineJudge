@@ -5,7 +5,7 @@ package crackingTheCodingInterview;
  * Date on 17-7-6 下午10:00.
  * Description:
  */
-public class P83_Stack {
+public class P830_Stack {
     class Node {
         Integer data;
         Node next;
