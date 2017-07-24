@@ -100,12 +100,12 @@ public class P34_UgleNumber {
     public static void main(String[] args) {
         P34_UgleNumber demo = new P34_UgleNumber();
         long time1 = System.currentTimeMillis();
-        int target = demo.GetUglyNumber_Solution(3);
+        int target = demo.GetUglyNumber_Solution(30);
         long time2 = System.currentTimeMillis();
-        System.out.println(target + "\t" + (time2 - time1));
-        int target2 = demo.GetUglyNumber_Solution2(3);
+        System.out.println(target + "\t time:" + (time2 - time1));
+        int target2 = demo.GetUglyNumber_Solution2(30);
         long time3 = System.currentTimeMillis();
-        System.out.println(target2 + "\t" + (time3 - time2));
+        System.out.println(target2 + "\t time:" + (time3 - time2));
 
     }
 }
