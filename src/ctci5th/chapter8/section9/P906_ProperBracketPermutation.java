@@ -73,12 +73,18 @@ public class P906_ProperBracketPermutation {
       String s = String.copyValueOf(str);
       list.add(s);
     } else {
+      // count = 2 leftRem = 1, rightRem = 3
+      // 再次进入if(leftRem > 0), 设置了index=2为(, 然后连着三次进入addParen设置), 直到条件终止;
+      // 栈回退的时候, 仍然回退到count=2的情况, 不过此时第一个if语句已经执行完毕, 进入了第二个if语句设置了index=2
+      //   时为)[此时的状态为(()], 再次进入addParen, 不过此时栈帧的状态是leftRem=1, count=3,那么此时再次进入第一个if
+      //   语句中, leftRem = 0, count = 4, rightLef = 2 [此时的状态是(()(];然后，此时连续两次设置)
       if (leftRem > 0) { // try a left paren, if there are some available
-        str[count] = '(';
+/*断点*/        str[count] = '(';
         addParen(list, leftRem - 1, rightRem, str, count + 1);
       }
+      // 　　再次栈回退到这里, count = 3, leftRem = 1, rightRem = 2;进入下面这个if语句中执行.
       if (rightRem > leftRem) { // try a right paren, if there抯 a matching left
-        str[count] = ')';
+/*断点*/        str[count] = ')';
         addParen(list, leftRem, rightRem - 1, str, count + 1);
       }
     }
