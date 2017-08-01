@@ -35,7 +35,7 @@ public class P3_TwoDimensionArrayFindNumber {
         右上角开始查找;
      */
     public static boolean isInArray(int[] array, int rows, int columns, int target) {
-        int x = 0;
+        int x = 0; //
         int y = columns - 1;
         if (array != null && rows > 0 && columns > 0) {
             while (x < rows && y >= 0) {

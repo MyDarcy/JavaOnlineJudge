@@ -42,7 +42,6 @@ public class P5_ReversePrintList {
         }
 
         return result;
-
     }
 
     /*
