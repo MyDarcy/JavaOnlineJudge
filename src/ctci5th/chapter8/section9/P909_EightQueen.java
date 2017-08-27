@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Description:
  * 8皇后问题.
  */
-public class P909_EightQueeen {
+public class P909_EightQueen {
 
   private static final int GRID_SIZE = 8;
 
