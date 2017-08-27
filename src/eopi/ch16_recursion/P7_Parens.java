@@ -66,6 +66,12 @@ public class P7_Parens {
    * k pairs of matched parens, it must be that the number of left parens we need is
    * less than the number of right parens (i.e., there are unmatched left parens in the string).
    *
+   * 复杂度:
+   * The number C(k) of strings with k pairs of matched parens grows very rapidly with
+   * k. Specifically, it can be shown that C(k + 1) = sum{C(k, i) / (k + 1), i = 0...k}, which solves to
+   * (2k)!/((k!(k + 1)!).
+   *
+   *
    * @param nPairs
    * @return
    */
