@@ -53,6 +53,10 @@ public class P5_Set {
 //      System.out.println(beenSelected);
       return;
     } else {
+      /*
+      注意else中是没有循环的, 所以总是二分调用的.
+       */
+
       // 总共会有input.size()个数字,每次都二分,所以最终的子集合的个数也是2^n个.
 
       // 生成包含tobeSelected元素的所有的子集
@@ -103,11 +107,11 @@ public class P5_Set {
 
   public static void main(String[] args) {
     long start = System.currentTimeMillis();
-    List<Integer> input = IntStream.rangeClosed(1, 20).mapToObj(Integer::valueOf).collect(Collectors.toList());
+    List<Integer> input = IntStream.rangeClosed(1, 4).mapToObj(Integer::valueOf).collect(Collectors.toList());
     List<List<Integer>> result = bruteForceSolution(input);
-    /*for (List<Integer> item : result) {
+    for (List<Integer> item : result) {
       System.out.println(item);
-    }*/
+    }
     System.out.println(System.currentTimeMillis() - start + "ms");
 
     start = System.currentTimeMillis();

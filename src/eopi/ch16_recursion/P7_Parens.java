@@ -1,5 +1,6 @@
 package eopi.ch16_recursion;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -92,9 +93,9 @@ public class P7_Parens {
       solution(remainingLeftParens - 1, remainingRightParens, inter + "(", result);
     }
 
+    // 左个数 < 右个数, 才能放一个右括号 ) ;
     // 在本层栈中, remainLeftParens和rightParen,还有inter值都是不变的.
-
-    //第一次执行到这里的时候, 当前栈的下一层栈中remainLeftParens = 0;
+    // 第一次执行到这里的时候, 当前栈的下一层栈中remainLeftParens = 0;
     // 在当前栈中, remainLeftParens = 1;而remainRightParens = 4;
     if (remainingLeftParens < remainingRightParens) {
       solution(remainingLeftParens, remainingRightParens - 1, inter + ")", result);
@@ -105,6 +106,9 @@ public class P7_Parens {
 
   public static void main(String[] args) {
     List<String> result = solution(4);
+    System.out.println(result);
+    Collections.sort(result);
+    System.out.println();
     System.out.println(result);
   }
 }

@@ -95,7 +95,8 @@ public class P3_Queen {
 
     for (int i = 3; i < 20; i++) {
       long start = System.currentTimeMillis();
-      System.out.println(i + " " + solution(i).size() + " time:" + (System.currentTimeMillis() - start) + "ms");
+      System.out.println(i + " " + solution(i).size()
+          + " time:" + (System.currentTimeMillis() - start) + "ms");
 
     }
 

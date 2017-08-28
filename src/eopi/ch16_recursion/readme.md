@@ -1,6 +1,6 @@
 ## preface
 
-- Recursion is a method where thesolution toa problem depends partially on solutions 
+- Recursion is a method where the solution to a problem depends partially on solutions 
 to smaller instances of related problems.
 - success of using recursion
     - identifying the base cases

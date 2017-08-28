@@ -63,6 +63,8 @@ public class P6_SubSetOfK {
       // 还需要挑选这么多个元素.
       int numberRemaning = k - integers.size();
       // 保证从offset开始, 还有至少numberRemaing个元素可供选择.
+
+      // 在进入下一轮循环的时候,实际上栈上的参数保持不变.
       for (int i = offset; i <= n && numberRemaning <= (n - i + 1); i++) {
 
         // 包含元素i进入下一轮. 还需要从剩余的元素中选择k - size个元素.
@@ -70,6 +72,9 @@ public class P6_SubSetOfK {
         solution(n, k, offset + 1, integers, result);
         // 不包含元素进入下一轮.
         integers.remove(integers.size() - 1);
+
+        // 实际上外面的循环已经做了这里要做的工作.
+        /*solution(n, k, offset + 1, integers, result);*/
       }
     }
   }
