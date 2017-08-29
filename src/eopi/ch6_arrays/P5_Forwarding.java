@@ -26,6 +26,9 @@ public class P5_Forwarding {
 
   /**
    *
+   *
+   * 时间复杂度O(n),空间复杂度O(1)
+   *
    * @param array
    * @return
    */
@@ -33,6 +36,7 @@ public class P5_Forwarding {
 
     int canReach = 0;
     int last = array.length - 1;
+    // 要达到的是last, 所以canReach < last, 等于的话就已经到达了.
     for (int i = 0; i <= canReach && canReach < last; i++) {
       canReach = Math.max(canReach, i + array[i]);
     }
