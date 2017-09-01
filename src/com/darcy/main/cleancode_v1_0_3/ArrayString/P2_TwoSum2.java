@@ -9,7 +9,7 @@ import java.util.Arrays;
  * <p>
  * 同样是Two-sum问题，如果输入数组是已经有序的。
  */
-public class TwoSum2 {
+public class P2_TwoSum2 {
 
   /**
    * 遍历数组，然后二分搜素第二个数字。

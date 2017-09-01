@@ -13,7 +13,7 @@ import java.util.Map;
  *
  * 返回: 两个数在数组中的index.
  */
-public class TwoSum1 {
+public class P1_TwoSum1 {
 
     /**
      * 暴力的方法。遍历。

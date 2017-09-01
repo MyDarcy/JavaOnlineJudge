@@ -12,7 +12,7 @@ import java.util.Map;
  * add(input):
  * find(value):
  */
-public class TwoSum3 {
+public class P3_TwoSum3 {
 
   /*
   add – O(n) runtime, find – O(1) runtime, O(n2) space – Store pair sums in hash table:
@@ -69,7 +69,7 @@ public class TwoSum3 {
   }
 
   public static void main(String[] args) {
-    TwoSum3 demo = new TwoSum3();
+    P3_TwoSum3 demo = new P3_TwoSum3();
     demo.add(1);
     demo.add(3);
     demo.add(5);
