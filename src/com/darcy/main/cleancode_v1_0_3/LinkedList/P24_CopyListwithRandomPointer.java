@@ -70,11 +70,23 @@ public class P24_CopyListwithRandomPointer {
   /**
    * modify the next node of the original node to point to its own copy.
    *
+   * 如果原节点-副本节点链建立起来后, 那么副本节点的随机域就是原节点的随机域的下一个节点.
+   * 这个也好理解,因为原节点和副本节点就是相邻的.
+   * node.next.random = node.random.next; // 副本节点的随机域 = 原节点随机域的下  一个节点(该随机域节点的副本)
+   *
+   * i. Create a copy of each of the original node and insert them in between two
+   *    original nodes in an alternate fashion.
+   * ii. Assign random pointer of each node copy.
+   * iii. Restore the input to its original configuration.
+   *
    * @param head
    * @return
    */
   public static RandomListNode copyRandomList(RandomListNode head) {
     RandomListNode p = head;
+
+    // 创建原始链表的每个节点的一个副本. 节点副本链接在原始节点后边.
+    // p1 -> dp1 -> p2 -> dp2 -> p3 -> dp3...
     while (p != null) {
       RandomListNode next = p.next;
       RandomListNode copy = new RandomListNode(p.val);
@@ -84,19 +96,27 @@ public class P24_CopyListwithRandomPointer {
     }
     p = head;
     while (p != null) {
+      // 原来链表中每一个节点p的副本节点是p.next; 因为上面的复制是副本链在原节点后面.
+      // p.next.random : p节点的副本节点的random域.
+      // p.random : p的random指针可能指向的节点(也可能为null); p.random 的副本节点就是其下一个节点,即p.random.next;
       p.next.random = (p.random != null) ? p.random.next : null;
+      // 下一个原节点.
       p = p.next.next;
     }
     p = head;
+    // 复制链表的头节点.
     RandomListNode headCopy = (p != null) ? p.next : null;
+    // 针对原链表进行迭代.
     while (p != null) {
+      // p不为null,那么副本节点必须存在.
       RandomListNode copy = p.next;
       p.next = copy.next;
       p = p.next;
+      // 建立副本节点之间的连接.
+      // 每一次迭代只建立前后两个副本节点之间的关联. 但是头节点已知,
+      // 所以迭代过程中只需要建立前后两个副本节点之间的连接关系.
       copy.next = (p != null) ? p.next : null;
     }
     return headCopy;
   }
-
-
 }
