@@ -44,7 +44,7 @@ public class P11_Coins {
    * a, b -- 桌子上还有的硬币的index.
    * R(a, b) --  the maximum revenue a player can get when it is his turn to play
    * C[i] -- 每个硬币的面额大小.
-   *  S(a,b) -- sum of the coins from positions a to b
+   * S(a,b) -- sum of the coins from positions a to b
    *
    * 递归解法:
    * 1. 当第一个选手选择a处的硬币的时候, 那么第二个选手的选择也是最优化的, 所以选手1的最后的最大值是
@@ -107,6 +107,9 @@ public class P11_Coins {
   public static void main(String[] args) {
     List<Integer> coins = Arrays.asList(25, 5, 10, 5, 10, 5, 10, 25, 1, 25, 1, 25, 1, 25, 5, 10);
     System.out.println(dpSolution(coins));
+
+    List<Integer> coins2 = Arrays.asList(3, 2, 2, 3, 1, 2);
+    System.out.println(dpSolution(coins2));
   }
 
 }
