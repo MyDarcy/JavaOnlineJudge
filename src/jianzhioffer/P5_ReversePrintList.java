@@ -13,51 +13,76 @@ import java.util.LinkedList;
 
 public class P5_ReversePrintList {
 
-    class ListNode {
-        int val;
-        ListNode next = null;
+  static class ListNode {
+    int val;
+    ListNode next = null;
 
-        ListNode(int val) {
-            this.val = val;
-        }
+    ListNode(int val) {
+      this.val = val;
     }
 
-     /*
-         放入stack;
-      */
-    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+    ListNode(int val, ListNode node) {
+      this.val = val;
+      this.next = node;
+    }
+  }
 
-        Deque<Integer> list = new LinkedList<>();
+  /**
+   * LinkedList模拟一个栈。
+   * 或者直接使用Stack。
+   *
+   * @param listNode
+   * @return
+   */
+  public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 
-        while (listNode != null) {
-            int value = listNode.val;
-            list.addLast(value);
-            listNode = listNode.next;
-        }
+    Deque<Integer> list = new LinkedList<>();
 
-        ArrayList<Integer> result = new ArrayList<>();
-
-        while (!list.isEmpty()) {
-            result.add(list.pollLast());
-        }
-
-        return result;
+    while (listNode != null) {
+      int value = listNode.val;
+      list.addLast(value);
+      listNode = listNode.next;
     }
 
-    /*
-        递归写法;
-     */
-    ArrayList<Integer> list = new ArrayList<>();
-    public ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
-        if (listNode != null) {
-            printListFromTailToHead2(listNode.next);
-            list.add(listNode.val);
-        }
-        return list;
+    ArrayList<Integer> result = new ArrayList<>();
+
+    while (!list.isEmpty()) {
+      result.add(list.pollLast());
     }
 
+    return result;
+  }
 
-    public static void main(String[] args) {
 
+  static ArrayList<Integer> list = new ArrayList<>();
+
+  /**
+   * 递归的思路.
+   * 回退到上一层栈的时候打印结果.
+   *
+   * @param listNode
+   * @return
+   */
+  public static ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
+    if (listNode != null) {
+      printListFromTailToHead2(listNode.next);
+      list.add(listNode.val);
     }
+    return list;
+  }
+
+
+  public static void main(String[] args) {
+    ListNode head =
+        new ListNode(1,
+            new ListNode(2,
+                new ListNode(3,
+                    new ListNode(4,
+                        new ListNode(5,
+                            new ListNode(6,
+                                new ListNode(7)))))));
+
+    ArrayList<Integer> result = printListFromTailToHead2(head);
+    System.out.println(result);
+  }
 }
