@@ -21,12 +21,15 @@ public class QuickSort {
         while (array[j] > current && i < j) {
           j--;
         }
+
         if (i < j) {
           array[i++] = array[j];
         }
+
         while (array[i] < current && i < j) {
           i++;
         }
+
         if (i < j) {
           array[j--] = array[i];
         }
