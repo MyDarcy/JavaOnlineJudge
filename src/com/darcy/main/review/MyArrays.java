@@ -7,8 +7,7 @@ import java.util.List;
 /**
  * Author by darcy
  * Date on 17-9-9 下午8:25.
- * Description:}
- * <p>
+ * Description:
  * 数组相关.
  */
 public class MyArrays {
@@ -582,6 +581,8 @@ public class MyArrays {
    * 求ai, bj, c[k+1]的距离, 那么最大距离更新为c[k+1] - a[i], 此时结果比Di大.
    * 求ai, b[j+1], ck的距离， 那么b[j+1] < ck的时候, 结果还是D[i], 当b[j+1]>ck的时候, 此时结果比Di大.
    * 求a[i+1], bj, ck的距离, 此时的ck - a[i+1]是比Di小的.
+   *
+   * 最小值对应的往后移动一位,然后求值, 直到一个数组遍历完毕.
    *
    * @return
    */
