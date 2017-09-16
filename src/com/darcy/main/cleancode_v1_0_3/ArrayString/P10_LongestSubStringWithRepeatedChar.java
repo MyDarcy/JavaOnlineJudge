@@ -25,8 +25,8 @@ public class P10_LongestSubStringWithRepeatedChar {
    * 作为数组的index,所以可以直接设置该index
    * 所表示的char, (char)index 是否出现过。
    *
-   * 遍历字符串,如果当前字符出现过, 那么要逐跳的更新table.两次出现相同字符的中间位置处都要设置为未出现，
-   * 因为下一次的起始位置其实是当前字符的位置.
+   * 遍历字符串,如果当前字符出现过, 那么要逐跳的更新table.两次出现相同字符,那么第一次出现的位置的前面位置的字符都要置为
+   * 没有出现，相当于是重新计数了, 因为下一次的起始位置其实是上一次相同字符的后面一个位置.
    *
    * O(n)的时间复杂度,O(1)的空间复杂度.
    *
@@ -63,14 +63,21 @@ public class P10_LongestSubStringWithRepeatedChar {
     // 存储某个字符的出现情况
     boolean[] exists = new boolean[256];
     int n = str.length();
-    int start = 0;
+    int start = 0; // 未出现重复的第一个字符.
     int maxLength = 0;
     for (int i = 0; i < str.length(); i++) {
-      // 出现了重复, 那么前指针就需要移动到当前位置，所经历路径上的字符现在都没有出现过了.
+      // "abcabac"
+      // 出现了重复, 那么当前字符的上一次出现位置的前面的字符在exists中都要置为false了.
       while (exists[str.charAt(i)]) {
         exists[str.charAt(start)] = false;
-        // 退出循环的时候 start == i;
+        // 是这样的, start退出时候的位置 = 跟str.charAt(i)字符相同的前面字符的位置的后一个位置.
         start++;
+      }
+
+      // for test.
+      if (i == 3) {
+        // "abcabac" ==> start=1,i=3
+        System.out.println("start=" + start + ",i=" + i);
       }
 
       // 每遇到新出现的字符,都可能产生最长距离.

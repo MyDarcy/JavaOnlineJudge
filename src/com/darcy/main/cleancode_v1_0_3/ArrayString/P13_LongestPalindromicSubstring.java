@@ -6,10 +6,9 @@ import java.util.Arrays;
  * Author by darcy
  * Date on 17-9-1 下午5:11.
  * Description:
- *
+ * <p>
  * 给定字符串S, 找S中的最长回文子串.可以假设字符串长度<1000,
  * 并且一定存在这样的回文子串.
- *
  */
 public class P13_LongestPalindromicSubstring {
 
@@ -18,6 +17,7 @@ public class P13_LongestPalindromicSubstring {
    * 有的时候成功: S = “caba”, S’ = “abac”. common = "aba"
    * 有的时候失败: S = “abacdfgdcaba”, S’ = “abacdgfdcaba”, common = "abacd",
    * 因为原字符串的前面和后面存在相同的子字符串部分。
+   *
    * @param string
    * @return
    */
@@ -29,8 +29,9 @@ public class P13_LongestPalindromicSubstring {
   /**
    * TODO
    * need to fix it.
-   *
+   * <p>
    * O(n^2)的时间复杂度,O(n^2)空间复杂度.
+   *
    * @param str
    * @return
    */
@@ -76,7 +77,6 @@ public class P13_LongestPalindromicSubstring {
   }
 
   /**
-   *
    * @param s
    * @return
    */
@@ -84,21 +84,25 @@ public class P13_LongestPalindromicSubstring {
     int n = s.length();
     int longestBegin = 0;
     int maxLen = 1;
+    // i到j之间是否是回文.
     boolean[][] table = new boolean[1000][1000];
+    // 长度为1的回文.
     for (int i = 0; i < n; i++) {
       table[i][i] = true;
     }
-    for (int i = 0; i < n-1; i++) {
+    // 长度为2的回文.
+    for (int i = 0; i < n - 1; i++) {
       if (s.charAt(i) == s.charAt(i + 1)) {
-        table[i][i+1] = true;
+        table[i][i + 1] = true;
         longestBegin = i;
         maxLen = 2;
       }
     }
+    // 长度 >=3 的回文.
     for (int len = 3; len <= n; len++) {
-      for (int i = 0; i < n-len+1; i++) {
-        int j = i+len-1;
-        if (s.charAt(i) == s.charAt(j) && table[i+1][j-1]) {
+      for (int i = 0; i < n - len + 1; i++) {
+        int j = i + len - 1;
+        if (s.charAt(i) == s.charAt(j) && table[i + 1][j - 1]) {
           table[i][j] = true;
           longestBegin = i;
           maxLen = len;
@@ -109,11 +113,10 @@ public class P13_LongestPalindromicSubstring {
   }
 
   /**
-   *
    * 以index为中心,向两边拓展,拓展的过程中保证回文属性.
    * O(n^2)的时间复杂度,O(1)的空间复杂度.
    * 每一个index都可以进行拓展,单个拓展的时间复杂度 O(n),总的时间复杂度O(n^2);
-   *
+   * <p>
    * other solution:
    * http://articles.leetcode.com/longest-palindromic-substring-part-ii
    *

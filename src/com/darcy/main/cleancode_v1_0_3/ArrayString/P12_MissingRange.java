@@ -8,11 +8,11 @@ import java.util.List;
  * Date on 17-9-1 下午4:23.
  * Description:
  * 给定一个排序后的数组,数组中所有元素都在给定范围内, 返回缺失的范围.
- *
- *
+ * <p>
+ * <p>
  * given [0, 1, 3, 50, 75], range[0, 99],
  * return [“2”, “4->49”, “51->74”, “76->99”]
- *
+ * <p>
  * Q: What if the given array is empty?
  * A: Then you should return [“0->99”] as those ranges are missing.
  * Q: What if the given array contains all elements from the ranges?
@@ -21,7 +21,6 @@ import java.util.List;
 public class P12_MissingRange {
 
   /**
-   *
    * 原来的边界处可以加上额外的边界，进行统一处理.
    *
    * @param array
@@ -47,7 +46,8 @@ public class P12_MissingRange {
   }
 
   /**
-   *  不加额外的边界的话.
+   * 不加额外的边界的话.
+   *
    * @param array
    * @param start
    * @param end
@@ -70,7 +70,7 @@ public class P12_MissingRange {
       }
 
       /*System.out.println(i);*/
-      if (i < array.length && i > 0 &&  ((array[i] - array[i - 1]) >= 2)) {
+      if (i < array.length && i > 0 && ((array[i] - array[i - 1]) >= 2)) {
         result.add(getRange(array[i - 1] + 1, array[i] - 1));
       }
 
@@ -90,7 +90,7 @@ public class P12_MissingRange {
     List<String> result = solution(array, 0, 99);
     System.out.println(result);
 
-    array = new int[] {1, 2, 4, 8, 10, 22, 89, 98};
+    array = new int[]{1, 2, 4, 8, 10, 22, 89, 98};
     List<String> result2 = solution2(array, 0, 99);
     System.out.println(result2);
 
