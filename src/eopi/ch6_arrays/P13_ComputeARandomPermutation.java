@@ -45,7 +45,7 @@ public class P13_ComputeARandomPermutation {
    * 采用swap的机制. 后面randdom.nextInt(given.size() - i) + i可以生成的index的个数分别是
    * n, n-1, n-2, n-3, n-4....(i = 0,1,...n - 1);这就相当于是 n! 的各个部分.
    *
-   * 时间复杂度O(n),空间复杂度(没有额外的)
+   * 时间复杂度O(n),空间复杂度(没有额外的空间)
    *
    * If we apply P11_SampleOfflineDate to (0,1,2,...,n- 1) with k = n,at each iteration the
    * array is partitioned into the **partial permutation and remaining values**. Although
@@ -78,6 +78,9 @@ public class P13_ComputeARandomPermutation {
     List<Integer> list = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
     List<Integer> result = solution(list.size());
     System.out.println(result);
+
+    Object o = null;
+    System.out.println("o=" + o);
 
   }
 
