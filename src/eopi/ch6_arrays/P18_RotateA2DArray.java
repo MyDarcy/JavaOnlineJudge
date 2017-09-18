@@ -33,7 +33,10 @@ public class P18_RotateA2DArray {
   }
 
   /**
+   * 同样是一层一层的变换. 每一层的4条边都变换 size - 1 - 2i个.
+   * 总共需要变化 size / 2轮.
    *
+   * 时间复杂度O(n^2), 空间复杂度O(1);
    * @param squareMatrix
    */
   public static void rotateMatrix(List<List<Integer>> squareMatrix) {
@@ -41,6 +44,8 @@ public class P18_RotateA2DArray {
     for (int i = 0; i < (squareMatrix.size() / 2); ++i) {
       // [i, matrixSize - i - 1]总共matrixSize - 2i个元素.
       // 4要变换的格式分别是 3, 1,
+
+      // 内存循环中,i, maxSize - i 都是不变的.
       for (int j = i; j < matrixSize - i; ++j) {
         // 左下角元素.
         int temp1 = squareMatrix.get(matrixSize - j).get(i);
@@ -51,7 +56,7 @@ public class P18_RotateA2DArray {
         // 左上角.
         int temp4 = squareMatrix.get(i).get(j) ;
 
-        // change n - 1个元素.
+        // change 4 个元素.
         squareMatrix.get(i).set(j, temp1);
         squareMatrix.get(matrixSize - j).set(i, temp2);
         squareMatrix.get(matrixSize - i).set(matrixSize - j, temp3);
