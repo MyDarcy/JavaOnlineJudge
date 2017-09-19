@@ -13,7 +13,7 @@ import java.util.LinkedList;
  */
 public class P1_ImplStackWithMaxAPI {
 
-  static class CacheWithMax {
+  public static class CacheWithMax {
     public Integer element;
     public Integer max;
 
@@ -23,7 +23,7 @@ public class P1_ImplStackWithMaxAPI {
     }
   }
 
-  static class Stack {
+  public static class Stack {
     private Deque<CacheWithMax> stack = new LinkedList<>();
 
     public boolean empty() {
