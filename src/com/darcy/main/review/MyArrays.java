@@ -158,6 +158,8 @@ public class MyArrays {
     }
 
     // i == j且是目标值的时候也会求出来.
+
+    // 找第k小的数字比较容易.
     array[i] = current;
     if (i + 1 == k) {
       return current;
