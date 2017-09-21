@@ -49,6 +49,7 @@ public class P38_CloneGraph {
     Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
     return DFS(graph, map);
   }
+
   private UndirectedGraphNode DFS(UndirectedGraphNode graph,
                                   Map<UndirectedGraphNode, UndirectedGraphNode> map) {
     // 原节点还没有复制过.
@@ -87,10 +88,13 @@ public class P38_CloneGraph {
         if (map.containsKey(neighbor)) {
           map.get(node).neighbors.add(map.get(neighbor));
         } else {
+          // 此邻居节点还没有创建副本.那么就创建它的副本.
           UndirectedGraphNode neighborCopy =
               new UndirectedGraphNode(neighbor.label);
           map.get(node).neighbors.add(neighborCopy);
           map.put(neighbor, neighborCopy);
+
+          // 此邻居节点之前还没有处理,这里会进行后续的处理.
           q.add(neighbor);
         }
       }

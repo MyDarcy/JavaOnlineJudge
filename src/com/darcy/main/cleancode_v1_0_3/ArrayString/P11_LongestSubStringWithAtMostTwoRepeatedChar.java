@@ -48,7 +48,7 @@ public class P11_LongestSubStringWithAtMostTwoRepeatedChar {
   public static int solution2(String str) {
 
     int[] count = new int[256];
-    int i = 0; // 两个字符组成字符串的起始位置.
+    int start = 0; // 两个字符组成字符串的起始位置.
     int numDistinct = 0;
     int maxLen = 0;
     for (int j = 0; j < str.length(); j++) {
@@ -57,11 +57,11 @@ public class P11_LongestSubStringWithAtMostTwoRepeatedChar {
       count[str.charAt(j)]++;
       // 已经有三个字符了,那么需要减少到两个字符.
       while (numDistinct > 2) {
-        count[str.charAt(i)]--;
-        if (count[str.charAt(i)] == 0) numDistinct--;
-        i++;
+        count[str.charAt(start)]--;
+        if (count[str.charAt(start)] == 0) numDistinct--;
+        start++;
       }
-      maxLen = Math.max(j - i + 1, maxLen);
+      maxLen = Math.max(j - start + 1, maxLen);
       System.out.println(maxLen);
     }
 

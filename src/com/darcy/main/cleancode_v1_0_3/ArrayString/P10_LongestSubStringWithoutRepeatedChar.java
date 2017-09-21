@@ -16,7 +16,7 @@ import java.util.Collections;
  * the length is 3. For “bbbbb” the longest substring is “b”, with the length of 1.
  *
  */
-public class P10_LongestSubStringWithRepeatedChar {
+public class P10_LongestSubStringWithoutRepeatedChar {
 
   /**
    * 用一个table存储字符的出现情况(这里假定是ASCII码,

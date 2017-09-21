@@ -95,10 +95,13 @@ public class P24_CopyListwithRandomPointer {
       p = next;
     }
     p = head;
+
+    // 建立随机域的关联.
     while (p != null) {
       // 原来链表中每一个节点p的副本节点是p.next; 因为上面的复制是副本链在原节点后面.
       // p.next.random : p节点的副本节点的random域.
-      // p.random : p的random指针可能指向的节点(也可能为null); p.random 的副本节点就是其下一个节点,即p.random.next;
+      // p.random : p的random指针可能指向的节点(也可能为null); p.random 的副本节点就是其下一个节点,
+      // 即p.random.next;
       p.next.random = (p.random != null) ? p.random.next : null;
       // 下一个原节点.
       p = p.next.next;

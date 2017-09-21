@@ -4,18 +4,17 @@ package com.darcy.main.cleancode_v1_0_3.Math;
  * Author by darcy
  * Date on 17-9-1 下午9:27.
  * Description:
- *
+ * <p>
  * Reverse digits of an integer. For example: x = 123, return 321
- *
+ * <p>
  * Q: What about negative integers?
  * A: For input x = –123, you should return –321.
- *
+ * <p>
  * Q: What if the integer’s last digit is 0? For example, x = 10, 100, …
  * A: Ignore the leading 0 digits of the reversed integer. 10 and 100 are both reversed as 1.
- *
+ * <p>
  * Q: What if the reversed integer overflows? For example, input x = 1000000003.
  * A: In this case, your function should return 0.
- *
  */
 public class P17_ReverseInteger {
 

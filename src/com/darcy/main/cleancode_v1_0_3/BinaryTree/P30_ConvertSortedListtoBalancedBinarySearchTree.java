@@ -4,21 +4,20 @@ package com.darcy.main.cleancode_v1_0_3.BinaryTree;
  * Author by darcy
  * Date on 17-9-3 下午3:06.
  * Description:
- *
+ * <p>
  * 将一棵节点值按照升序排序好的链表转为高度平衡的二叉搜索树.
- *
+ * <p>
  * Given a singly linked list where elements are sorted in ascending order,
  * convert it to a height balanced BST.
- *
+ * <p>
  * Hint:
  * Things get a little more complicated when you have a singly linked list instead of an
  * array. Please note that in linked list, you no longer have random access to an element in
  * O(1) time.
- *
+ * <p>
  * How about inserting nodes following the list’s order? If we can achieve this, we no
  * longer need to find the middle element, as we are able to traverse the list while inserting
  * nodes to the tree.
- *
  */
 public class P30_ConvertSortedListtoBalancedBinarySearchTree {
 
@@ -62,7 +61,6 @@ public class P30_ConvertSortedListtoBalancedBinarySearchTree {
   }
 
   /**
-   *
    * 按照上一题的思路, 每次都找到中间节点,然后在递归解决问题.
    * 时间复杂度O(nlogn) (logn层, 每一层n/2次遍历), 空间复杂度O(logn);
    *
@@ -75,8 +73,8 @@ public class P30_ConvertSortedListtoBalancedBinarySearchTree {
 
 
   private static ListNode listNode;
+
   /**
-   *
    * @param head
    * @return
    */
@@ -106,7 +104,14 @@ public class P30_ConvertSortedListtoBalancedBinarySearchTree {
   }
 
   public static void main(String[] args) {
-    ListNode first = new ListNode(10, new ListNode(20, new ListNode(30, new ListNode(40, new ListNode(50, new ListNode(60, new ListNode(70)))))));
+    ListNode first =
+        new ListNode(10,
+            new ListNode(20,
+                new ListNode(30,
+                    new ListNode(40,
+                        new ListNode(50,
+                            new ListNode(60,
+                                new ListNode(70)))))));
 
     TreeNode root = solution(first);
 

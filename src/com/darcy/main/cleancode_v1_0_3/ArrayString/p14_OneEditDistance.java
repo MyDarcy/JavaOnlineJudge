@@ -51,7 +51,7 @@ public class p14_OneEditDistance {
     int n = str2.length();
 
     if (n < m) {
-      solution(str2, str1);
+      return solution(str2, str1);
     }
 
     if (n - m > 1) {
@@ -83,9 +83,6 @@ public class p14_OneEditDistance {
     }
 
     return i == m;
-
-
-
   }
 
   public static void main(String[] args) {

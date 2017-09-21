@@ -66,6 +66,7 @@ public class P22_SwapNodesInPair {
       prev.next = q;
       q.next = p;
       p.next = r;
+      // 现在的p已经是前后pair的后一个节点了.
       prev = p;
       p = r;
     }

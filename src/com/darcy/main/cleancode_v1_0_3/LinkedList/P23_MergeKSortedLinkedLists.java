@@ -187,5 +187,4 @@ public class P23_MergeKSortedLinkedLists {
       System.out.println(sb);
     }
   }
-
 }

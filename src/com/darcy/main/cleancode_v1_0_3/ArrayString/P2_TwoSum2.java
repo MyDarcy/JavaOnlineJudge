@@ -13,8 +13,9 @@ public class P2_TwoSum2 {
 
   /**
    * 遍历数组，然后二分搜素第二个数字。
-   *
+   * <p>
    * 时间复杂度O(nlogn),空间复杂度O(1)
+   *
    * @param array
    * @param target
    * @return
@@ -45,9 +46,9 @@ public class P2_TwoSum2 {
   }
 
   /**
-   *
    * 大小元素相加,跟目标元素相比,调整索引的位置.
    * O(n)的时间， O(1)的空间.
+   *
    * @param array
    * @param target
    * @return

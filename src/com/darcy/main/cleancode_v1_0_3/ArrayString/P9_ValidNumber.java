@@ -47,6 +47,8 @@ public class P9_ValidNumber {
     if (i < n && (str.charAt(i) == '+' || str.charAt(i) == '-')) {
       i++;
     }
+
+    // 只有+号,此时为false.
     boolean isNumberic = false;
     while (i < n && Character.isDigit(str.charAt(i))) {
       i++;

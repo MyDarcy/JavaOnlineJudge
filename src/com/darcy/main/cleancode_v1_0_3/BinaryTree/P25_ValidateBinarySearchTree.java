@@ -70,7 +70,8 @@ public class P25_ValidateBinarySearchTree {
   /**
    * 每次判定子树是否为 bst 的时候, 传入该节点的上下限.
    *
-   * O(n)的时间复杂度,O(1)的空间复杂度.但是传入的Integer.MIN_VALUE或者Integer.MAX_VALUE可能并不能覆盖节点的取值范围.
+   * O(n)的时间复杂度,O(1)的空间复杂度.但是传入的Integer.MIN_VALUE或者Integer.MAX_VALUE可能并不能覆盖
+   * 节点的取值范围.
    *
    * @param root
    * @return

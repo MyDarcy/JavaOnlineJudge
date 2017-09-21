@@ -82,6 +82,8 @@ public class P13_LongestPalindromicSubstring {
    */
   public static String solutionDP(String s) {
     int n = s.length();
+
+    // 维护两个变量: 最长回文子串的起始位置 + 最长回文子串的长度.
     int longestBegin = 0;
     int maxLen = 1;
     // i到j之间是否是回文.
