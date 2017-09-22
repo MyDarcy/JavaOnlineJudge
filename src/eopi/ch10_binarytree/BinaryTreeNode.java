@@ -33,4 +33,27 @@ public class BinaryTreeNode<T> {
     this.left = left;
     this.right = right;
   }
+
+  public static BinaryTreeNode<Integer> ROOT =
+      new BinaryTreeNode<Integer>(314,
+          new BinaryTreeNode<Integer>(6,
+              new BinaryTreeNode<Integer>(271,
+                  new BinaryTreeNode<Integer>(28),
+                  new BinaryTreeNode<Integer>(0)),
+              new BinaryTreeNode<Integer>(561,
+                  null,
+                  new BinaryTreeNode<Integer>(3,
+                      new BinaryTreeNode<Integer>(17),
+                      null))),
+          new BinaryTreeNode<Integer>(6,
+              new BinaryTreeNode<Integer>(2,
+                  null,
+                  new BinaryTreeNode<Integer>(1,
+                      new BinaryTreeNode<Integer>(401,
+                          null,
+                          new BinaryTreeNode<Integer>(641)),
+                      new BinaryTreeNode<Integer>(257))),
+              new BinaryTreeNode<Integer>(271,
+                  null,
+                  new BinaryTreeNode<Integer>(28))));
 }

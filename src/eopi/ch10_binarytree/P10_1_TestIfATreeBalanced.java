@@ -60,8 +60,16 @@ public class P10_1_TestIfATreeBalanced {
     return checkBalanced(tree).balanced;
   }
 
-  private static BalanceStatusWithHeight checkBalanced(
-      BinaryTreeNode<Integer> tree) {
+  /**
+   * 后续遍历.
+   * <p>
+   * 任何子树高度不平衡.
+   * 空间复杂度O(H)--树高; 时间复杂度O(N)--节点数
+   *
+   * @param tree
+   * @return
+   */
+  private static BalanceStatusWithHeight checkBalanced(BinaryTreeNode<Integer> tree) {
     if (tree == null) {
       return new BalanceStatusWithHeight(true, -1); // Base case.
     }
@@ -73,6 +81,8 @@ public class P10_1_TestIfATreeBalanced {
     if (!rightResult.balanced) {
       return rightResult; // Right subtree is not balanced.
     }
+
+    // 左右子树的高度之差是否为1.
     boolean isBalanced = Math.abs(leftResult.height - rightResult.height) <= 1;
 
     // 叶子节点的高度为0;
@@ -80,3 +90,14 @@ public class P10_1_TestIfATreeBalanced {
     return new BalanceStatusWithHeight(isBalanced, height);
   }
 }
+
+/*
+Variant: Write a program that returns the size of the largest subtree that is complete.
+
+Variant: Define a node in a binary tree to be k-balanced if the difference in the number
+of nodes in its left and right subtrees is no more than k. Design an algorithm that
+takes as input a binary tree and positive integer k, and returns a node in the binary
+tree such that the node is not k-balanced, but all of its descendants are k-balanced.
+For example, when applied to the binary tree in Figure10.1 on Page150, if k = 3, your
+algorithm should return Node J.
+ */
