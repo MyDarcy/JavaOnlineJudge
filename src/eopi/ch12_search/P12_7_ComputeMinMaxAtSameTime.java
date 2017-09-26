@@ -7,9 +7,8 @@ import java.util.List;
  * Author by darcy
  * Date on 17-9-24 下午8:53.
  * Description:
- *
+ * <p>
  * 同时计算min和max的最小值.
- *
  */
 public class P12_7_ComputeMinMaxAtSameTime {
 
@@ -28,7 +27,6 @@ public class P12_7_ComputeMinMaxAtSameTime {
   }
 
   /**
-   *
    * 时间复杂度O(N), 空间复杂度O(1); 这里简单起见, new了很多临时对象.
    * 但是其实可以set值.
    *
@@ -41,7 +39,7 @@ public class P12_7_ComputeMinMaxAtSameTime {
     }
 
     MinMax result = new MinMax(list.get(0), list.get(0));
-    for (int i = 1; i  + 1 < list.size(); i += 2) {
+    for (int i = 1; i + 1 < list.size(); i += 2) {
       MinMax temp = MinMax.minMax(list.get(i), list.get(i + 1));
       result = new MinMax(Math.min(result.min, temp.min), Math.max(result.max, temp.max));
     }

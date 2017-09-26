@@ -18,7 +18,7 @@ public class P12_2_SearchASortedArrayForEntryEqualsToItsIndex {
   /**
    * 根据mid索引和array[mid]之间的关系确定候选集区间.
    * 时间复杂度O(logN)
-   *
+   * <p>
    * <p>
    * Observe that if A[j] > j, then no entry after j can satisfy the given criterion.
    * This is because each element in the array is at least1 greater than the previous
