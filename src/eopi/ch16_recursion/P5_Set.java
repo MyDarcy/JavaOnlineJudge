@@ -98,7 +98,6 @@ public class P5_Set {
         list.add(target.get((int) (Math.log(bitArray & ~(bitArray - 1)) / log2)));
         bitArray &= (bitArray - 1);
       }
-
       result.add(list);
     }
 

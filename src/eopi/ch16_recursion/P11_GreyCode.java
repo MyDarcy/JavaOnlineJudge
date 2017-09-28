@@ -70,6 +70,7 @@ public class P11_GreyCode {
    * @return
    */
   public static List<Integer> efficientSolution(int bitNumber) {
+
     if (bitNumber == 0) {
       return new ArrayList<>(Arrays.asList(0));
     }
@@ -84,6 +85,7 @@ public class P11_GreyCode {
     int leadingBitOne = 1 << (bitNumber - 1);
 
     int i = result.size() - 1;
+
     for (; i >= 0; i--) {
       result.add(leadingBitOne | result.get(i));
     }
@@ -93,6 +95,10 @@ public class P11_GreyCode {
 
   public static void main(String[] args) {
     List<Integer> result = solution(4);
+    for (int i = result.size() / 2; i < result.size(); i++) {
+      System.out.println(Integer.toBinaryString(result.get(i)));
+    }
+
     System.out.println(result);
 
     System.out.println();
