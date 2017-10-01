@@ -6,13 +6,13 @@ import java.util.Arrays;
  * Author by darcy
  * Date on 17-9-29 下午3:49.
  * Description:
- *
+ * <p>
  * 第一个数组是排序的, 实际元素的个数比数组的空间要小. 第二个数组也是有序的, 那么将第二个数组中的元素合并到第一个数组中.
- *
+ * <p>
  * Write a program which takes as input two sorted arrays of integers, and updates the
  * first to the combined entries of the two arrays in sorted order. Assume the first array
  * has enough empty entries at its end to hold the result.
- *
+ * <p>
  * Hint: Avoid repeatedly moving entries.
  */
 public class P14_2_MergeTwoSortedArray {

@@ -15,7 +15,6 @@ import java.util.List;
 public class P14_1_ComputeIntersectOfTwoSortedArray {
 
   /**
-   *
    * @param list1
    * @param list2
    * @return

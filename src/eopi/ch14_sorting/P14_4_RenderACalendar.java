@@ -9,15 +9,14 @@ import java.util.List;
  * Author by darcy
  * Date on 17-9-29 下午9:26.
  * Description:
- *
+ * <p>
  * 给定一组任务, 都有发生的起始时间和结束时间,
  * 计算同时处于发生状态的任务最多有多少个.
- *
+ * <p>
  * Write a program that takes a set of events, and determines the maximum number of
  * events that take place concurrently.
- *
+ * <p>
  * Hint: Focus on endpoints.
- *
  */
 public class P14_4_RenderACalendar {
 
@@ -83,7 +82,7 @@ public class P14_4_RenderACalendar {
   /**
    * 对于每一个端节点,计算包含该端节点的event个数.
    * n个interval, 那么端节点的个数是2N.
-   *
+   * <p>
    * For each endpoint, compute the number of events that contain it. The maximum number
    * of concurrent events is the maximum of this quantity over all endpoints. If there are
    * n intervals, the total number of endpoints is 2n. Computing the number of events
@@ -101,18 +100,20 @@ public class P14_4_RenderACalendar {
 
   /**
    * 首先对排序所有的端节点(增序). 先开始的在前面. 如果运行事件相同并且同时开始,那么哪一个在前面无所谓.
-   *
-   *  Intuitively, we can improve the run time by sorting the set of all the endpoints in
-   *  ascending order. (If two endpoints have equal times, and one is a start time and the
-   *  other is an end time, the one corresponding to a start time comes first. If both are
-   *  start or finish times, we break ties arbitrarily.)
-   *
-   *  Now as we proceed through endpoints we can incrementally track the number of events
-   *  taking place at that endpoint using a counter. For each endpoint that is the start
-   *  of an interval, we increment the counter by 1, and for each endpoint that is the end
-   *  of an interval, we decrement the counter by 1. The maximum value attained by the counter
-   *  is maximum number of overlapping intervals.
-   *
+   * 按照这种顺序排完序以后, 遇到一个端节点是一段时间的起始节点,那么+1, 一个端节点是一段时间的结束节点, 那么
+   * -1. 每次操作后的max进行比较更新.
+   * <p>
+   * Intuitively, we can improve the run time by sorting the set of all the endpoints in
+   * ascending order. (If two endpoints have equal times, and one is a start time and the
+   * other is an end time, the one corresponding to a start time comes first. If both are
+   * start or finish times, we break ties arbitrarily.)
+   * <p>
+   * Now as we proceed through endpoints we can incrementally track the number of events
+   * taking place at that endpoint using a counter. For each endpoint that is the start
+   * of an interval, we increment the counter by 1, and for each endpoint that is the end
+   * of an interval, we decrement the counter by 1. The maximum value attained by the counter
+   * is maximum number of overlapping intervals.
+   * <p>
    * 复杂度分析:
    * Sorting the endpoint array takes O(nlog n) time; iterating through the sorted array
    * takes O(n) time, yielding an O(nlog n) time complexity The space complexity is O(n),
