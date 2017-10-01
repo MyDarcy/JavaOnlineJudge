@@ -166,10 +166,10 @@ public class P14_4_RenderACalendar {
     System.out.println();
 
     int result = solution(events);
-    System.out.println(result);
+    System.out.println("max concurrent:" + result);
+
   }
 }
-
 /*
 Event{start=1, end=5}
 Event{start=2, end=7}
@@ -192,4 +192,37 @@ Event{start=14, end=15}
                           12       15
                                 14 15
 
+ */
+
+/*
+Event{start=1, end=5}
+Event{start=2, end=7}
+Event{start=4, end=5}
+Event{start=6, end=10}
+Event{start=8, end=9}
+Event{start=9, end=17}
+Event{start=11, end=13}
+Event{start=12, end=15}
+Event{start=14, end=15}
+
+EndPoint{time=1, isStart=true}
+EndPoint{time=2, isStart=true}
+EndPoint{time=4, isStart=true}
+EndPoint{time=5, isStart=false}
+EndPoint{time=5, isStart=false}
+EndPoint{time=6, isStart=true}
+EndPoint{time=7, isStart=false}
+EndPoint{time=8, isStart=true}
+EndPoint{time=9, isStart=true}
+EndPoint{time=9, isStart=false}
+EndPoint{time=10, isStart=false}
+EndPoint{time=11, isStart=true}
+EndPoint{time=12, isStart=true}
+EndPoint{time=13, isStart=false}
+EndPoint{time=14, isStart=true}
+EndPoint{time=15, isStart=false}
+EndPoint{time=15, isStart=false}
+EndPoint{time=17, isStart=false}
+
+max concurrent:3
  */

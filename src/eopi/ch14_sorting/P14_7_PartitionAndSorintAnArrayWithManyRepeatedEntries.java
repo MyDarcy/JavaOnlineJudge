@@ -81,6 +81,7 @@ public class P14_7_PartitionAndSorintAnArrayWithManyRepeatedEntries {
       ageToCount.put(age, count);
     }
 
+    // {11=1, 12=2, 13=3, 14=2}
     System.out.println(ageToCount);
 
     // 年龄为age的person在结果集合中的偏移量.
@@ -92,6 +93,7 @@ public class P14_7_PartitionAndSorintAnArrayWithManyRepeatedEntries {
       offset += value;
     }
 
+    // {11=0, 12=1, 13=3, 14=6}
     System.out.println(ageToOffset);
 
     // while循环实际要迭代的次数是offset次, 也就是student.size()次.

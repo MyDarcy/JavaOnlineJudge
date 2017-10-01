@@ -186,3 +186,8 @@ public class P14_6_ComputeTheUnionOfIntervals {
     }
   }
 }
+/*
+(0, 4]
+[5, 11]
+[12, 17)
+ */
