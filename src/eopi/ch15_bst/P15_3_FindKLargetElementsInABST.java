@@ -7,21 +7,20 @@ import java.util.List;
  * Author by darcy
  * Date on 17-10-1 下午9:48.
  * Description:
- *
+ * <p>
  * 在BST中找到K个最大的值.
- *
+ * <p>
  * Write a program that takes as input a BST and an integer k, and returns the k largest
  * elements in the BST in decreasing order. For example, if the input is the BST in
  * Figure 15.1 on Page 255 and k = 3, your program should return (53,47,43).
  * Hint: What does an inorder traversal yield?
- *
- *
  */
 public class P15_3_FindKLargetElementsInABST {
 
   /**
    * 1. 解法1,中序遍历,然后获取后面的topK,因为已经是有序的了.
    * 2. 解法2,
+   *
    * @param tree
    * @return
    */
@@ -33,19 +32,19 @@ public class P15_3_FindKLargetElementsInABST {
 
   /**
    * 执行逆序的中序遍历.
-   *
+   * <p>
    * A better approach is to begin with the desired nodes, and work backwards. We do
    * this by recursing first on the right subtree and then on the left subtree. This amounts
    * to a reverse-inorder traversal. For the BST in Figure 15.1 on Page 255, the reverse
    * inorder visit sequence is (P, O, I,N,K,M,L,/, A,G,H,F,B,E,C,D)
    * We store newer nodes at the end of the array
-   *
+   * <p>
    * To find the five biggest keys in the tree in Figure 15.1 on Page 255, we would
    * recurse on A,I,O,P, in that order. Returning from recursive calls, we would visit
    * P,O, I, in that order, and add their keys to the result. Then we would recurse on
    * J, K,N, in that order. Finally, we would visit N and then K, adding their keys to the
    * result. Then we would stop, since we have five keys in the array.
-   *
+   * <p>
    * 时间复杂度O(h + k),
    *
    * @param tree

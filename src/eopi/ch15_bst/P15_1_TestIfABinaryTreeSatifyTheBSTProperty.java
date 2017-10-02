@@ -7,30 +7,29 @@ import java.util.LinkedList;
  * Author by darcy
  * Date on 17-10-1 下午8:49.
  * Description:
- *
+ * <p>
  * 判断一棵二叉树是否满足BST的特性.
- *
+ * <p>
  * Write a program that takes as input a binary tree and checks if the tree satisfies the
  * BST property.\
- *
+ * <p>
  * Hint: Is it correct to check for each node that its key is greater than or equal to
  * the key at its left child and less than or equal to the key at its right child?
- *
  */
 public class P15_1_TestIfABinaryTreeSatifyTheBSTProperty {
 
   /**
    * 获取左子树的最大值lmax, 右子树的最小值 rmin, 看lmax < root <= rmin
    * 不满足, 返回false,满足则继续往左右子树遍历.
-   *
+   * <p>
    * 问题在于每次子节点的计算都是重复计算的.
-   *
-   *  A directapproach, based on the definition of a BST, is tobegin with the root,
-   *  and compute the maximum key stored in the root's left subtree, and the minimum
-   *  key in the root's right subtree. We check that the key at the root is greater than or
-   *  equal to the maximum from the left subtree and less than or equal to the minimum
-   *  from the right subtree. If both these checks pass, we recursively check the root's left
-   *  and right subtrees. If either check fails, we return false.
+   * <p>
+   * A directapproach, based on the definition of a BST, is tobegin with the root,
+   * and compute the maximum key stored in the root's left subtree, and the minimum
+   * key in the root's right subtree. We check that the key at the root is greater than or
+   * equal to the maximum from the left subtree and less than or equal to the minimum
+   * from the right subtree. If both these checks pass, we recursively check the root's left
+   * and right subtrees. If either check fails, we return false.
    *
    * @param tree
    * @return
@@ -42,11 +41,12 @@ public class P15_1_TestIfABinaryTreeSatifyTheBSTProperty {
 
   /**
    * 传入上下界.
-   *
+   * <p>
    * if all nodes in a tree must have keys in the range [l,u], and the key at the root is w
    * (which itself must be between [l,u],otherwise the requirement is violated at the root
    * itself), then all keys in the left subtree must be in the range [Z, w], and all keys stored
    * in the right subtree must be in the range [w, u],
+   *
    * @param tree
    * @return
    */
@@ -84,12 +84,13 @@ public class P15_1_TestIfABinaryTreeSatifyTheBSTProperty {
   /**
    * 检测是否存在冲突.
    * 使用队列是要把上一层的上下界的信息传入到下一层.
+   * <p>
+   * use a queue, where each queue entry contains a node, as well as an upper and a lower
+   * bound on the keys stored at the subtree rooted at that node. The queue is initialized
+   * to the root, with lower bound -oo and upper bound +oo. We iteratively check the
+   * constraint on each node. If it violates the constraint we stop the BST property has been
+   * violated. Otherwise, we add its children along with the corresponding constraint.
    *
-   *  use a queue, where each queue entry contains a node, as well as an upper and a lower
-   *  bound on the keys stored at the subtree rooted at that node. The queue is initialized
-   *  to the root, with lower bound -oo and upper bound +oo. We iteratively check the
-   *  constraint on each node. If it violates the constraint we stop the BST property has been
-   *  violated. Otherwise, we add its children along with the corresponding constraint.
    * @param head
    * @return
    */
