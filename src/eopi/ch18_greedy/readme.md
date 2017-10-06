@@ -1,0 +1,2 @@
+- A greedy algorithm is an algorithm that computes a solution in steps; at each step the algorithm makes a decision that is locally optimum, and it never changes that decision.
+- In its most general form, the coin changing problem is NP-hard; but for some coinages, the greedy algorithm is optimum;
