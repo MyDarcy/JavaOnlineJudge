@@ -1,6 +1,7 @@
 package nowcoder.pingan;
 
 import java.math.BigInteger;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,34 @@ public class Main2 {
     Scanner input = new Scanner(System.in);
     long number = input.nextLong();
     number = Math.abs(number);
+    long count = solution(number);
+
+    System.out.println(count);
+
+    System.out.println("----");
+    test();
+  }
+
+  private static void test() {
+    Random random = new Random(31);
+    int right = 0;
+    for (int i = 0; i < 100; i++) {
+      long number = random.nextInt(1200);
+      long result1 = solution(number);
+      long result2 = solution2(number);
+      System.out.println(number + ":" + result1 + "\t" + result2);
+      right += (result1 == result2) ? 1 : 0;
+    }
+    System.out.println("test:" + right);
+  }
+
+
+  /**
+   * 解法1.
+   * @param number
+   * @return
+   */
+  private static long solution(long number) {
     long count = 0;
     long div = 5;
 
@@ -33,8 +62,22 @@ public class Main2 {
       }
       div *= 5;
     }
+    return count;
+  }
 
-    System.out.println(count);
+  /**
+   * 解法2.
+   * @param number
+   * @return
+   */
+  private static long solution2(long number) {
+    long count = 0;
+    while (number > 0) {
+      count += number / 5;
+      number /= 5;
+    }
+
+    return count;
   }
 
   /**
