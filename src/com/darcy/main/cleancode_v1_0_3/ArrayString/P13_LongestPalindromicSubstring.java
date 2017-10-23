@@ -104,6 +104,9 @@ public class P13_LongestPalindromicSubstring {
     for (int len = 3; len <= n; len++) {
       for (int i = 0; i < n - len + 1; i++) {
         int j = i + len - 1;
+        // 要判断 j - i + 1长度的字符串的回文情况, 需要直到 j - i - 1长度的字符串的回文情况.
+        // 但是遍历到len = j - i + 1长度的字符串的时候, 所有j - i - 1长度的字符串都已经处理过了.
+        // 因为外层遍历是长度.
         if (s.charAt(i) == s.charAt(j) && table[i + 1][j - 1]) {
           table[i][j] = true;
           longestBegin = i;

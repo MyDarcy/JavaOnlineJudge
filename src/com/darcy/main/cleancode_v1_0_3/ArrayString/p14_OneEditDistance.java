@@ -50,6 +50,8 @@ public class p14_OneEditDistance {
     int m = str1.length();
     int n = str2.length();
 
+    // 长度大的在后,
+    // 长度小的在前,
     if (n < m) {
       return solution(str2, str1);
     }

@@ -52,15 +52,20 @@ public class P38_CloneGraph {
 
   private UndirectedGraphNode DFS(UndirectedGraphNode graph,
                                   Map<UndirectedGraphNode, UndirectedGraphNode> map) {
-    // 原节点还没有复制过.
+    // 当前节点已经复制过.
     if (map.containsKey(graph)) {
       return map.get(graph);
     }
+    // 原节点还没有复制过.
     UndirectedGraphNode graphCopy = new UndirectedGraphNode(graph.label);
     map.put(graph, graphCopy);
     for (UndirectedGraphNode neighbor : graph.neighbors) {
+      // 为当前节点的副本节点添加邻居节点.
+      // DFS返回的就是传入的neighbor节点的副本节点.
+      // DFS就是先从一个节点出发.
       graphCopy.neighbors.add(DFS(neighbor, map));
     }
+    // 返回当前节点的副本节点.
     return graphCopy;
   }
 

@@ -53,12 +53,17 @@ public class P11_LongestSubStringWithAtMostTwoRepeatedChar {
     int maxLen = 0;
     for (int j = 0; j < str.length(); j++) {
       // 遇到一个新出现的字符.
-      if (count[str.charAt(j)] == 0) numDistinct++;
+      if (count[str.charAt(j)] == 0) {
+        numDistinct++;
+      }
       count[str.charAt(j)]++;
       // 已经有三个字符了,那么需要减少到两个字符.
       while (numDistinct > 2) {
         count[str.charAt(start)]--;
-        if (count[str.charAt(start)] == 0) numDistinct--;
+        if (count[str.charAt(start)] == 0) {
+          numDistinct--;
+        }
+        // numDistict = 2, 但是start仍然要更新到指向第一个未重复的元素.
         start++;
       }
       maxLen = Math.max(j - start + 1, maxLen);

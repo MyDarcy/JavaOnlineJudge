@@ -17,7 +17,7 @@ public class P45_MaximumSumSubarray {
 
   /**
    * f(i) 以元素i结尾的最大值.
-   * f(i) = f(i - 1) + A[i -1]
+   * f(i) = f(i - 1) + A[i]
    *
    * O(n)的时间复杂度,O(1)的空间复杂度.
    *
@@ -31,6 +31,7 @@ public class P45_MaximumSumSubarray {
     int maxEndingHere = A[0], maxSoFar = A[0];
     for (int i = 1; i < A.length; i++) {
       // 连续性. maxEndingHere + A[i]来保证.
+      // 是和之前的元素一起组成max还是当前元素另器炉灶得到max.
       maxEndingHere = Math.max(maxEndingHere + A[i], A[i]);
       maxSoFar = Math.max(maxEndingHere, maxSoFar);
     }

@@ -131,6 +131,7 @@ public class P25_ValidateBinarySearchTree {
     if (p == null) return true;
 
     // 左边是有序的,然后判定右边.
+    // 符合左右根的遍历顺序.
     if (isMonotonicIncreasing(p.left)) {
       if (prev != null && p.val <= prev.val) return false;
       prev = p;

@@ -102,15 +102,15 @@ public class P10_LongestSubStringWithoutRepeatedChar {
     int[] charIndexMap = new int[256];
     // 初始化，默认全是0的话会出现问题.
     Arrays.fill(charIndexMap, -1);
-    int i = 0; // 第一个未重复出现的字符的index. >=i 就可以判定出现了重复字符.
+    int firstNotDuplicateIndex = 0; // 第一个未重复出现的字符的index. >=i 就可以判定出现了重复字符.
     int maxLength = 0;
     for (int j = 0; j < str.length(); j++) {
-      if (charIndexMap[str.charAt(j)] >= i) { // str.chatAt(j)出现的字符上一次已经出现过.
+      if (charIndexMap[str.charAt(j)] >= firstNotDuplicateIndex) { // str.chatAt(j)出现的字符上一次已经出现过.
         // str.charAt(j)处的字符之前已经出现过了,所以起始位置要更新到上一次该字符的下一个位置处.
-        i = charIndexMap[str.charAt(j)] + 1;
+        firstNotDuplicateIndex = charIndexMap[str.charAt(j)] + 1;
       }
       charIndexMap[str.charAt(j)] = j;
-      maxLength = Math.max(maxLength, j - i + 1);
+      maxLength = Math.max(maxLength, j - firstNotDuplicateIndex + 1);
     }
 
     return maxLength;

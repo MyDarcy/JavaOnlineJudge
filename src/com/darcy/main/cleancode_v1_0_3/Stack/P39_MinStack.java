@@ -26,6 +26,7 @@ public class P39_MinStack {
     public void push(Integer x) {
       stack.push(x);
       // 小于等于栈顶的才放入元素才放入栈顶.连续放入相同大小的元素. 那么最小栈也是连续放入了多个值. 3,2,2,2,2
+      // 如果要改造成为maxStack, 那么 >= maxStack.peek()才放入.
       if (minStack.isEmpty() || x <= minStack.peek()) {
         minStack.push(x);
       }

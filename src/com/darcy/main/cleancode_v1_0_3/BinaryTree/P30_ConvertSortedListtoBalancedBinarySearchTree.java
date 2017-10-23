@@ -91,10 +91,10 @@ public class P30_ConvertSortedListtoBalancedBinarySearchTree {
 
   // 打两个断点推一下.
   private static TreeNode solution(int start, int end) {
-    if (start > end) {
+    if (start > end) { // 断点1
       return null;
     }
-    int middle = (start + end) / 2;
+    int middle = (start + end) / 2; // 断点2
     TreeNode left = solution(start, middle - 1);
     TreeNode parent = new TreeNode(listNode.val);
     parent.left = left;

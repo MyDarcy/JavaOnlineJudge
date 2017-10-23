@@ -74,7 +74,7 @@ public class P28_BalancedBinaryTree {
     int left = depth2(root.left);
     int right = depth2(root.right);
 
-    return Math.abs(left - right) <= 0 && solution2(root.left) && solution2(root.right);
+    return Math.abs(left - right) <= 1 && solution2(root.left) && solution2(root.right);
 
   }
 
@@ -111,6 +111,5 @@ public class P28_BalancedBinaryTree {
     }
 
     return (Math.abs(L - R) <= 1) ? Math.max(L, R) + 1 : -1;
-
   }
 }

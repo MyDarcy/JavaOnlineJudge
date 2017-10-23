@@ -102,6 +102,8 @@ public class P24_CopyListwithRandomPointer {
       // p.next.random : p节点的副本节点的random域.
       // p.random : p的random指针可能指向的节点(也可能为null); p.random 的副本节点就是其下一个节点,
       // 即p.random.next;
+      // p.next是p节点的副本节点.
+      // p.random是.next是p.random节点的副本节点.
       p.next.random = (p.random != null) ? p.random.next : null;
       // 下一个原节点.
       p = p.next.next;

@@ -87,7 +87,6 @@ public class P21_AddTwoNumber {
         }
         temp = temp.next;
         iter = iter.next;
-
       }
     }
 
