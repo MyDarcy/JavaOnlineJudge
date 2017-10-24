@@ -49,6 +49,7 @@ public class P11_SampleOfflineData {
     Random random = new Random(31);
     for (int i = 0; i < k; i++) {
       // random.nextInt(given.size() - i) + i就是 [i, size - 1]
+      // n * (n - 1) * (n - 2) * ...;后面那部分的可能取值空间
       Collections.swap(given, i, random.nextInt(given.size() - i) + i);
     }
     return given.subList(0, k);

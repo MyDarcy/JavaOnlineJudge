@@ -83,6 +83,7 @@ public class P2_DutchNumber {
     int equal = 0;
     int bigger = array.length;
     while (equal < bigger) {
+      // samller到equal之间的元素是是 <= equal处的值的那部分元素.
       if (array[equal] < pivot) {
         swap(array, smaller++, equal++);
       } else if (array[equal] == pivot) {

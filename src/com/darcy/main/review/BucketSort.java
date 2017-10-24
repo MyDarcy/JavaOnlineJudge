@@ -49,6 +49,8 @@ public class BucketSort {
           p = p.next;
         }
 
+        // p.next.key > node.key;
+        // p节点的值是 < node.key的.
         node.next = p.next;
         p.next = node;
 

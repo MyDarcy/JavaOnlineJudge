@@ -8,19 +8,19 @@ import java.util.List;
  * Author by darcy
  * Date on 17-9-17 下午10:24.
  * Description:
- *
+ * <p>
  * 二维矩阵顺时针方向旋转90度.
- *
+ * <p>
  * 1   2  3  4        13 9 5 1
  * 5   6  7  8    =>  14 10 6 2
  * 9  10  11 12   =>  15 11 7 3
  * 13 14 15 16        16 12 8 4
- *
  */
 public class P18_RotateA2DArray {
 
   /**
    * 创建一个copy array, 第 n-i-1 行是转换后的第i列.
+   *
    * @param array
    */
   public static void bruteForceSolution(int[][] array) {
@@ -35,8 +35,9 @@ public class P18_RotateA2DArray {
   /**
    * 同样是一层一层的变换. 每一层的4条边都变换 size - 1 - 2i个.
    * 总共需要变化 size / 2轮.
-   *
+   * <p>
    * 时间复杂度O(n^2), 空间复杂度O(1);
+   *
    * @param squareMatrix
    */
   public static void rotateMatrix(List<List<Integer>> squareMatrix) {
@@ -54,7 +55,7 @@ public class P18_RotateA2DArray {
         // 右上角.
         int temp3 = squareMatrix.get(j).get(matrixSize - i);
         // 左上角.
-        int temp4 = squareMatrix.get(i).get(j) ;
+        int temp4 = squareMatrix.get(i).get(j);
 
         // change 4 个元素.
         squareMatrix.get(i).set(j, temp1);
@@ -69,7 +70,7 @@ public class P18_RotateA2DArray {
     List<List<Integer>> list = new ArrayList<>();
     list.add(Arrays.asList(1, 2, 3, 4));
     list.add(Arrays.asList(5, 6, 7, 8));
-    list.add(Arrays.asList(9, 10,11, 12));
+    list.add(Arrays.asList(9, 10, 11, 12));
     list.add(Arrays.asList(13, 14, 15, 16));
 
     for (List<Integer> row : list) {

@@ -29,7 +29,7 @@ public class P11_7_ImplStackAPIWithHeap {
   public static class Stack {
     private int timestamp = 0;
     private PriorityQueue<ValueWithRank> minHeap =
-        new PriorityQueue<>((v1, v2) -> Integer.compare(v1.rank, v2.rank));
+        new PriorityQueue<>((v1, v2) -> Integer.compare(v2.rank, v1.rank));
 
     /**
      * push, pop的复杂度都是O(logN)

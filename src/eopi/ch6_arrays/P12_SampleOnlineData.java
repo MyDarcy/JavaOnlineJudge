@@ -65,6 +65,7 @@ public class P12_SampleOnlineData {
       Integer element = iterator.next();
       numberSoFar++;
       // 有 k / numberSoFar的概率使得index落在[0, k]之间,这就代表了可以将当前读取的数字移动到index位置.
+      // 随着不断新加入的元素, 那么其要被置换到前面的概率就是其index落在[0,k]之前的概率.
       int indexToReplace = randomForNextIndex.nextInt(numberSoFar);
       if (indexToReplace < k) {
         result.set(indexToReplace, element);
