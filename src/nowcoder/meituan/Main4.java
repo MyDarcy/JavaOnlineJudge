@@ -5,7 +5,7 @@ package nowcoder.meituan;
  * Date on 2017/10/24 15:50.
  * Description:
  *
- * 给定一个数，求另外一个数, 
+ * 给定一个数，求另外一个数,
  *
  */
 public class Main4 {
