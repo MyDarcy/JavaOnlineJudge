@@ -28,6 +28,7 @@ hs_err_pid*
 .idea/
 out/
 target/
+.DS_Store
 
 # may to useful to eclipse
 .classpath/
