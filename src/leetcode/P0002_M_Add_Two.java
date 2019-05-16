@@ -22,7 +22,7 @@ class ListNode {
     ListNode next;
     ListNode(int x) { val = x; }
 }
-public class P2_M_Add_Two {
+public class P0002_M_Add_Two {
 
     /**
      * 1. 是在原列表的基础上改动还是创建新的链表；
@@ -125,8 +125,10 @@ public class P2_M_Add_Two {
         ListNode c1 = l1;
         ListNode c2 = l2;
         ListNode sentinel = new ListNode(0);
+        // 哨兵节点；
         ListNode d = sentinel;
         int sum = 0;
+        // 有一个不为空，就可以继续更新链表：
         while (c1 != null || c2 != null) {
             sum /= 10;
             if (c1 != null) {

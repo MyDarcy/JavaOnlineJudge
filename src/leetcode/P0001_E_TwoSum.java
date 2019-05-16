@@ -19,7 +19,7 @@ import java.util.Map;
  思路： 从前往后遍历一遍, 如果target - current不在map中, 那么将(current, index)添加到map中;
        在的话, 则返回target-current的index和current的index;
  */
-public class P1_E_TwoSum {
+public class P0001_E_TwoSum {
 
     /**
      * 目前最优解
