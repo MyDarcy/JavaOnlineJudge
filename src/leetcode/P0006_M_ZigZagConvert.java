@@ -1,6 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 之字型的转换；给定字符串摆成了给定行数的之字型，按行读取后去掉空字符后输出；
@@ -65,6 +67,12 @@ public class P0006_M_ZigZagConvert {
 
   }
 
+  /**
+   * 常规解法
+   * @param s
+   * @param numRows
+   * @return
+   */
   public String convert2(String s, int numRows) {
     //
     if (numRows == 1) return s;
@@ -83,6 +91,71 @@ public class P0006_M_ZigZagConvert {
     }
     return ret.toString();
   }
+
+  /**
+   * official solution
+   * Iterate through ss from left to right, appending each character to the appropriate row.
+   * The appropriate row can be tracked using two variables: the current row and the current direction.
+   * The current direction changes only when we moved up to the topmost row or moved down to the bottommost row.
+   * Time Complexity: O(n), where n == len(s)
+   * Space Complexity: O(n)
+   * @param s
+   * @param numRows
+   * @return
+   */
+  public String convert3(String s, int numRows) {
+
+    if (numRows == 1) return s;
+
+    List<StringBuilder> rows = new ArrayList<>();
+    for (int i = 0; i < Math.min(numRows, s.length()); i++)
+      rows.add(new StringBuilder());
+
+    int curRow = 0;
+    boolean goingDown = false;
+
+    for (char c : s.toCharArray()) {
+      rows.get(curRow).append(c);
+      if (curRow == 0 || curRow == numRows - 1) goingDown = !goingDown;
+      curRow += goingDown ? 1 : -1;
+    }
+
+    StringBuilder ret = new StringBuilder();
+    for (StringBuilder row : rows) ret.append(row);
+    return ret.toString();
+  }
+
+  /**
+   * official solution
+   * Visit the characters in the same order as reading the Zig-Zag pattern line by line.
+   *
+   * For all whole numbers kk,
+   *
+   * Characters in row 0 are located at indexes k(2⋅numRows−2)
+   * Characters in row numRows−1 are located at indexes k(2⋅numRows−2)+numRows−1
+   * Characters in inner row ii are located at indexes k(2⋅numRows−2)+i and (k+1)(2⋅numRows−2)−i.
+   * @param s
+   * @param numRows
+   * @return
+   */
+  public String convert4(String s, int numRows) {
+
+    if (numRows == 1) return s;
+
+    StringBuilder ret = new StringBuilder();
+    int n = s.length();
+    int cycleLen = 2 * numRows - 2;
+
+    for (int i = 0; i < numRows; i++) {
+      for (int j = 0; j + i < n; j += cycleLen) {
+        ret.append(s.charAt(j + i));
+        if (i != 0 && i != numRows - 1 && j + cycleLen - i < n)
+          ret.append(s.charAt(j + cycleLen - i));
+      }
+    }
+    return ret.toString();
+  }
+
 
   public static void main(String[] args) {
     P0006_M_ZigZagConvert instance = new P0006_M_ZigZagConvert();
