@@ -74,11 +74,10 @@ public class P0006_M_ZigZagConvert {
    * @return
    */
   public String convert2(String s, int numRows) {
-    //
     if (numRows == 1) return s;
     StringBuilder ret = new StringBuilder();
     char[] c = s.toCharArray();
-    int cycle = 2 * numRows - 2; // 一数列 numRows 个元素; 两整列之间 rowNums - 2 个;
+    int cycle = 2 * numRows - 2; // 一数列 numRows 个元素; 两整列之间 rowNums - 2 个; 首行元素所在的位置.
     int n = s.length();
     for (int i = 0; i < numRows; i++) {
       // i+j 下一列同一位置处的元素; j可以认为是整列;
@@ -159,8 +158,8 @@ public class P0006_M_ZigZagConvert {
 
   public static void main(String[] args) {
     P0006_M_ZigZagConvert instance = new P0006_M_ZigZagConvert();
-    String result = instance.convert("PAYPALISHIRING", 3);
-    String result2 = instance.convert("PAYPALISHIRING", 4);
+    String result = instance.convert2("PAYPALISHIRING", 3);
+    String result2 = instance.convert2("PAYPALISHIRING", 4);
     System.out.println(result);
     System.out.println(result2);
   }
