@@ -49,7 +49,7 @@ package leetcode;
  * Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
  *              Thefore INT_MIN (−2^31) is returned.
  */
-public class P0007_M_atoi {
+public class P0008_M_atoi {
   public int myAtoi(String str) {
     if(str == null || str.length() == 0) return 0;
     return 0;
