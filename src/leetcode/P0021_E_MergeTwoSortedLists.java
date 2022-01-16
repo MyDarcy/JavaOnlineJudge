@@ -19,7 +19,7 @@ public class P0021_E_MergeTwoSortedLists {
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     if (l1 == null) return l2;
     if (l2 == null) return l1;
-
+    return null;
   }
 
   /**
